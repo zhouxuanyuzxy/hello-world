@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 @RestController
 @RequestMapping("/user")
 @Api
@@ -33,6 +34,7 @@ public class UserController {
     @ApiOperation(value = "用户名查询用户")
     @ApiImplicitParam(name = "username", value = "用户名", dataType = ApiDataType.STRING, paramType = ApiParamType.QUERY)
     public List<User> getUserByUserName(String userName){
+        int a = 0;
         return userMapper.select(new User(userName,null));
     }
 
