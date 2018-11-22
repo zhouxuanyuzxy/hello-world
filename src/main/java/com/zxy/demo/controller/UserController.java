@@ -51,6 +51,7 @@ public class UserController {
         log.info("[lambda写法] - [分页信息] - [{}]", pageInfo.toString());
 
         PageHelper.startPage(1, 10).setOrderBy("id desc");
+
         final PageInfo<User> userPageInfo = new PageInfo<>(this.userMapper.selectAll());
         log.info("[普通写法] - [{}]", userPageInfo);
         return pageInfo;
