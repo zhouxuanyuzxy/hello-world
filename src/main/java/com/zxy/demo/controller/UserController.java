@@ -47,6 +47,7 @@ public class UserController {
 
     @GetMapping("getUserListByPager")
     public PageInfo getUserListByPager(){
+        
         final PageInfo<Object> pageInfo = PageHelper.startPage(1, 10).setOrderBy("id desc").doSelectPageInfo(() -> this.userMapper.selectAll());
         log.info("[lambda写法] - [分页信息] - [{}]", pageInfo.toString());
 
