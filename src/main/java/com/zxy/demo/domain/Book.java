@@ -7,8 +7,9 @@ import java.io.Serializable;
  */
 public class Book implements Serializable {
     private static final long serialVersionUID = -2164058270260403154L;
-
+//id
     private String id;
+        // name
     private String name;
 
     public Book() {
